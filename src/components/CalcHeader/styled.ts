@@ -35,7 +35,7 @@ export const ThemeSwitcherSliderContainer = styled.div`
 export const ThemeSwitcherSliderDiskContainer = styled.div`
     width:80px;
     height:20px;
-    background-color:darkgray;
+    background-color:darkgrey;
     display:flex;
     align-items: center;
     border-radius:10px;
@@ -58,4 +58,5 @@ export const ThemeSwitcherSliderNumberContainer = styled.div`
 
 export const ThemeSwitcherSliderNumber = styled.p`
     margin: 0 5px;
+    cursor:pointer;
 `;

@@ -1,11 +1,41 @@
-import React from 'react';
-import { CalculatorContainer } from './styled';
+import React, {useState} from 'react';
+import { CalculatorContainer, Body } from './styled';
 import { CalcHeader } from '../CalcHeader';
+import { themeColor1, themeColor2, themeColor3 } from '../../colors';
 
 export const Calculator = () => {
+    const [choosenTheme, setChoosenTheme] = useState(1);
+    
+    const handleChoosenTheme = (themeNumber:number):void =>{
+        setChoosenTheme(themeNumber);
+
+    }
+    
+    const getColorTheme = ():object => {
+        switch (choosenTheme){
+            case 1:
+                return themeColor1;
+                break;
+            case 2:
+                return themeColor2;
+                break;
+            case 3:
+                return themeColor3;
+                break;
+            default:
+                return themeColor1;
+                break;
+        }    
+    }
+
     return(
-    <CalculatorContainer>
-        <CalcHeader/>
-    </CalculatorContainer>
+    <Body theme={getColorTheme()}>
+        <CalculatorContainer theme={getColorTheme()}>
+            <CalcHeader
+                choosenTheme={choosenTheme}  
+                handleChoosenTheme={handleChoosenTheme}
+            />
+        </CalculatorContainer>
+    </Body>
     );
 }
