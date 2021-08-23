@@ -1,16 +1,25 @@
 import styled from 'styled-components';
 
+interface StyleProps{
+    backgroundColor?:string;
+    color?:string;
+    fontSize?:string;
+    left?:string;
+}
+
 export const CalcHeaderContainer = styled.div`
     width:100%;
     height: 50px;
-    background-color:grey;
     display:flex;
     justify-content: space-between;
     align-items:center;
+    padding:10px 30px;
 `;
 
-export const CalcHeaderText = styled.p`
-
+export const CalcHeaderText = styled.p<StyleProps>`
+    color:${(props)=> props.color};
+    font-size: 32px;
+    font-weight:bold;
 `;
 
 export const ThemeSwitcherContainer = styled.div`
@@ -20,8 +29,10 @@ export const ThemeSwitcherContainer = styled.div`
     //background-color:blue;
 `;
 
-export const ThemeSwitcherText = styled.p`
-    width: 50px;
+export const ThemeSwitcherText = styled.p<StyleProps>`
+    color:${props=> props.color};
+    position:relative;
+    left:-30px;
 `;
 
 export const ThemeSwitcherSliderContainer = styled.div`
@@ -32,17 +43,19 @@ export const ThemeSwitcherSliderContainer = styled.div`
     align-items: center;
 `;
 
-export const ThemeSwitcherSliderDiskContainer = styled.div`
+export const ThemeSwitcherSliderDiskContainer = styled.div<StyleProps>`
     width:80px;
     height:20px;
-    background-color:darkgrey;
+    background-color:${props => props.backgroundColor};
     display:flex;
     align-items: center;
     border-radius:10px;
 `;
 
-export const ThemeSwitcherSliderDisk = styled.div`
-    background-color:red;
+export const ThemeSwitcherSliderDisk = styled.div<StyleProps>`
+    background-color:${props => props.backgroundColor};
+    position:relative;
+    left: ${props => props.left}; //5%   42%    78%
     width: 15px;
     height: 15px;
     border-radius:50%;
@@ -56,7 +69,9 @@ export const ThemeSwitcherSliderNumberContainer = styled.div`
     justify-content:space-between;
 `;
 
-export const ThemeSwitcherSliderNumber = styled.p`
+export const ThemeSwitcherSliderNumber = styled.p<StyleProps>`
     margin: 0 5px;
     cursor:pointer;
+    color:${props=> props.color};
+    font-size:12px;
 `;

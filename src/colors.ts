@@ -1,4 +1,23 @@
-export const themeColor1 = {
+export interface colorThemeInterface{
+    mainBackground: string;
+    sliderBackground: string;
+    calcBackground: string;
+
+    delReset: string;
+    delResetShadow: string;
+
+    sliderDiskEqual: string;
+    sliderDiskEqualShadow: string;
+
+    normalKeys: string;
+    normalKeysShadow: string;
+
+    normalKeysText: string;
+    
+    headerText: string;
+}
+
+export const themeColor1:colorThemeInterface = {
     mainBackground: 'hsl(222, 26%, 31%)',
     sliderBackground: 'hsl(223, 31%, 20%)',
     calcBackground: 'hsl(224, 36%, 15%)',
@@ -14,10 +33,10 @@ export const themeColor1 = {
 
     normalKeysText: 'hsl(221, 14%, 31%)',
     
-    whiteKeyText: 'hsl(0, 0, 100%)'
+    headerText: '#FFF'
 }
 
-export const themeColor2 = {
+export const themeColor2:colorThemeInterface = {
     mainBackground: 'hsl(0, 0%, 90%)',
     sliderBackground: 'hsl(0, 5%, 81%)',
     calcBackground: 'hsl(0, 0%, 93%)',
@@ -33,10 +52,10 @@ export const themeColor2 = {
 
     normalKeysText: 'hsl(60, 10%, 19%)',
     
-    whiteKeyText: 'hsl(0, 0, 100%)'
+    headerText: 'hsl(60, 10%, 19%)'
 }
 
-export const themeColor3 = {
+export const themeColor3:colorThemeInterface = {
     mainBackground: 'hsl(268, 75%, 9%)',
     sliderBackground: 'hsl(268, 71%, 12%)',
     calcBackground: 'hsl(268, 71%, 12%)',
@@ -52,5 +71,5 @@ export const themeColor3 = {
 
     normalKeysText: 'hsl(52, 100%, 62%)',
     
-    whiteKeyText: 'hsl(0, 0, 100%)'
+    headerText: 'hsl(52, 100%, 62%)'
 }

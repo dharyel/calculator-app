@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import { CalculatorContainer, Body } from './styled';
 import { CalcHeader } from '../CalcHeader';
 import { themeColor1, themeColor2, themeColor3 } from '../../colors';
-
+import { colorThemeInterface
+ } from '../../colors';
 export const Calculator = () => {
     const [choosenTheme, setChoosenTheme] = useState(1);
     
@@ -11,7 +12,7 @@ export const Calculator = () => {
 
     }
     
-    const getColorTheme = ():object => {
+    const getColorTheme = ():colorThemeInterface => {
         switch (choosenTheme){
             case 1:
                 return themeColor1;
@@ -32,6 +33,7 @@ export const Calculator = () => {
     <Body theme={getColorTheme()}>
         <CalculatorContainer theme={getColorTheme()}>
             <CalcHeader
+                theme={getColorTheme()}
                 choosenTheme={choosenTheme}  
                 handleChoosenTheme={handleChoosenTheme}
             />
