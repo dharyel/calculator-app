@@ -15,6 +15,7 @@ export interface colorThemeInterface{
     normalKeysText: string;
     
     headerText: string;
+    displayText:string;
 }
 
 export const themeColor1:colorThemeInterface = {
@@ -33,7 +34,8 @@ export const themeColor1:colorThemeInterface = {
 
     normalKeysText: 'hsl(221, 14%, 31%)',
     
-    headerText: '#FFF'
+    headerText: '#FFF',
+    displayText:'#FFF'
 }
 
 export const themeColor2:colorThemeInterface = {
@@ -52,7 +54,8 @@ export const themeColor2:colorThemeInterface = {
 
     normalKeysText: 'hsl(60, 10%, 19%)',
     
-    headerText: 'hsl(60, 10%, 19%)'
+    headerText: 'hsl(60, 10%, 19%)',
+    displayText: 'hsl(60, 10%, 19%)'
 }
 
 export const themeColor3:colorThemeInterface = {
@@ -71,5 +74,6 @@ export const themeColor3:colorThemeInterface = {
 
     normalKeysText: 'hsl(52, 100%, 62%)',
     
-    headerText: 'hsl(52, 100%, 62%)'
+    headerText: 'hsl(52, 100%, 62%)',
+    displayText: 'hsl(52, 100%, 62%)'
 }

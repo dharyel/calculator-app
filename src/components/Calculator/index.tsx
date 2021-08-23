@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { CalculatorContainer, Body } from './styled';
 import { CalcHeader } from '../CalcHeader';
+import CalcDisplay from '../CalcDisplay';
 import { themeColor1, themeColor2, themeColor3 } from '../../colors';
 import { colorThemeInterface
  } from '../../colors';
@@ -37,6 +38,8 @@ export const Calculator = () => {
                 choosenTheme={choosenTheme}  
                 handleChoosenTheme={handleChoosenTheme}
             />
+
+            <CalcDisplay theme={getColorTheme()}/>
         </CalculatorContainer>
     </Body>
     );

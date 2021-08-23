@@ -13,7 +13,8 @@ export const CalcHeaderContainer = styled.div`
     display:flex;
     justify-content: space-between;
     align-items:center;
-    padding:10px 0px;
+    padding: 10px 10px;
+    margin:5px 0px;
 `;
 
 export const CalcHeaderText = styled.p<StyleProps>`
