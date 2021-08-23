@@ -8,6 +8,7 @@ interface CalculatorStyleProps {
 export const CalculatorContainer=styled.div`
     width:500px;
     height: 100%;
+    padding: 0px 30px;
     
     @media screen and (max-width:500px){
         width: 100%;

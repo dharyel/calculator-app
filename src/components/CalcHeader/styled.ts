@@ -13,7 +13,7 @@ export const CalcHeaderContainer = styled.div`
     display:flex;
     justify-content: space-between;
     align-items:center;
-    padding:10px 30px;
+    padding:10px 0px;
 `;
 
 export const CalcHeaderText = styled.p<StyleProps>`
@@ -32,7 +32,8 @@ export const ThemeSwitcherContainer = styled.div`
 export const ThemeSwitcherText = styled.p<StyleProps>`
     color:${props=> props.color};
     position:relative;
-    left:-30px;
+    left:-15px;
+    font-size:13px;
 `;
 
 export const ThemeSwitcherSliderContainer = styled.div`
@@ -55,12 +56,13 @@ export const ThemeSwitcherSliderDiskContainer = styled.div<StyleProps>`
 export const ThemeSwitcherSliderDisk = styled.div<StyleProps>`
     background-color:${props => props.backgroundColor};
     position:relative;
-    left: ${props => props.left}; //5%   42%    78%
+    left: ${props => props.left}; //3%   38%    80%
     width: 15px;
     height: 15px;
     border-radius:50%;
     margin-top:auto;
     margin-bottom:auto;
+    transition: left 0.3s ease-in-out;
 `;
 
 export const ThemeSwitcherSliderNumberContainer = styled.div`
@@ -73,5 +75,9 @@ export const ThemeSwitcherSliderNumber = styled.p<StyleProps>`
     margin: 0 5px;
     cursor:pointer;
     color:${props=> props.color};
-    font-size:12px;
+    font-size:10px;
+
+    :hover{
+        filter: opacity(50%);
+    }
 `;

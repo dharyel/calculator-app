@@ -28,7 +28,7 @@ export const CalcHeader = (props:CalcHeaderProps) =>{
             <CalcHeaderText color={props.theme.headerText}>calc</CalcHeaderText>
             
             <ThemeSwitcherContainer>
-                <ThemeSwitcherText color={props.theme.headerText}>Theme</ThemeSwitcherText>
+                <ThemeSwitcherText color={props.theme.headerText}>THEME</ThemeSwitcherText>
                 <ThemeSwitcherSliderContainer>
                     <ThemeSwitcherSliderNumberContainer>
                         <ThemeSwitcherSliderNumber color={props.theme.headerText} onClick={()=>props.handleChoosenTheme(1)}>1</ThemeSwitcherSliderNumber>
@@ -39,7 +39,7 @@ export const CalcHeader = (props:CalcHeaderProps) =>{
 
                         <ThemeSwitcherSliderDisk 
                             backgroundColor={props.theme.sliderDiskEqual} 
-                            left={props.choosenTheme==1? '5%':props.choosenTheme==2? '42%':'78%'} 
+                            left={props.choosenTheme==1? '3%':props.choosenTheme==2? '38%':'80%'} 
                             />
                     </ThemeSwitcherSliderDiskContainer>
                 </ThemeSwitcherSliderContainer>
