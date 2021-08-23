@@ -5,14 +5,16 @@ import CalcDisplay from '../CalcDisplay';
 import { themeColor1, themeColor2, themeColor3 } from '../../colors';
 import { colorThemeInterface
  } from '../../colors';
+import { CalcOperation } from '../../calcInterface';
+
 export const Calculator = () => {
     const [choosenTheme, setChoosenTheme] = useState(1);
-    
+    const [calcValue, setCalcValue] = useState("0");
+
     const handleChoosenTheme = (themeNumber:number):void =>{
         setChoosenTheme(themeNumber);
-
     }
-    
+
     const getColorTheme = ():colorThemeInterface => {
         switch (choosenTheme){
             case 1:
@@ -27,7 +29,31 @@ export const Calculator = () => {
             default:
                 return themeColor1;
                 break;
-        }    
+        }  
+    }
+
+    const CalcPressButton = (value:string,calcOperation:CalcOperation):void=>{
+        let newValue:string;
+
+        switch (calcOperation){
+            case CalcOperation.delete:
+                if (calcValue.length>0){
+                    newValue = calcValue.slice(0,-1);
+                    setCalcValue(newValue);
+                }
+                break;
+            case CalcOperation.reset:
+                newValue = "0";
+                setCalcValue(newValue);
+                break;
+            case CalcOperation.equal:
+                newValue = eval(calcValue);
+                setCalcValue(newValue);
+                break;
+            default:
+                setCalcValue(`${calcValue}${value}`);
+                break;
+        }
     }
 
     return(
@@ -39,7 +65,7 @@ export const Calculator = () => {
                 handleChoosenTheme={handleChoosenTheme}
             />
 
-            <CalcDisplay theme={getColorTheme()}/>
+            <CalcDisplay calcValue={calcValue} theme={getColorTheme()}/>
         </CalculatorContainer>
     </Body>
     );

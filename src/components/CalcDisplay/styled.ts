@@ -1,4 +1,5 @@
-import styled, { StyledProps } from 'styled-components';
+import styled from 'styled-components';
+
 
 interface StyleProps{
     backgroundColor?:string;
@@ -10,6 +11,7 @@ export const CalcDisplayContainer = styled.div<StyleProps>`
     height: 80px;
     margin:5px 0px;
     padding: 20px;
+    border-radius:5px;
     
     text-align:right;
     overflow-x: auto;

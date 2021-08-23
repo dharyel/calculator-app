@@ -7,22 +7,21 @@ import { colorThemeInterface } from '../../colors';
 
 export interface Props{
     theme:colorThemeInterface;
+    calcValue:string;
     children?: React.ReactNode;
 }
 
 export default (props: Props) => {
 
-    const [calcValuesArray, setCalcValuesArray] = useState<string[]>([]);
-    const [calcValueString, setCalcValueString] = useState("0");
     
-    
-    const handleUpdateCalcValueString = ():void =>{
 
+    const handleDisplayCalcValue = ():string =>{
+        return props.calcValue;
     }
 
     
     return (
     <CalcDisplayContainer backgroundColor={props.theme.calcBackground}>
-        <CalcDisplayText color={props.theme.displayText}>{calcValueString}</CalcDisplayText>
+        <CalcDisplayText color={props.theme.displayText}>{handleDisplayCalcValue()}</CalcDisplayText>
     </CalcDisplayContainer>);
 }
