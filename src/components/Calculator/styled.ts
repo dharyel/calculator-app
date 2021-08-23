@@ -14,6 +14,7 @@ export const CalculatorContainer=styled.div`
     
     @media screen and (max-width:500px){
         width: 100%;
+        min-width:400px;
     }
 `;
 

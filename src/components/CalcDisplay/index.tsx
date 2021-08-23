@@ -5,7 +5,7 @@ import {
                             from './styled';
 import { colorThemeInterface } from '../../colors';
 
-export interface Props{
+interface Props{
     theme:colorThemeInterface;
     calcValue:string;
     children?: React.ReactNode;

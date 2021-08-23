@@ -6,10 +6,11 @@ import { themeColor1, themeColor2, themeColor3 } from '../../colors';
 import { colorThemeInterface
  } from '../../colors';
 import { CalcOperation } from '../../calcInterface';
+import CalcBody from '../CalcBody';
 
 export const Calculator = () => {
     const [choosenTheme, setChoosenTheme] = useState(1);
-    const [calcValue, setCalcValue] = useState("0");
+    const [calcValue, setCalcValue] = useState("");
 
     const handleChoosenTheme = (themeNumber:number):void =>{
         setChoosenTheme(themeNumber);
@@ -43,7 +44,7 @@ export const Calculator = () => {
                 }
                 break;
             case CalcOperation.reset:
-                newValue = "0";
+                newValue = "";
                 setCalcValue(newValue);
                 break;
             case CalcOperation.equal:
@@ -66,6 +67,11 @@ export const Calculator = () => {
             />
 
             <CalcDisplay calcValue={calcValue} theme={getColorTheme()}/>
+
+            <CalcBody 
+                CalcPressButton={CalcPressButton} 
+                theme={getColorTheme()}
+            />
         </CalculatorContainer>
     </Body>
     );
