@@ -6,3 +6,4 @@ It's the #1 challenge from Frontend Mentor. Link: https://www.frontendmentor.io/
 - <b>STYLEDCOMPONENTS</b>
 - <b>TYPESCRIPT</b>
 
+# Test the app in link: https://dharyel.github.io/calculator-app/public/index.html
