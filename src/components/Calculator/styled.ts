@@ -18,7 +18,7 @@ export const CalculatorContainer=styled.div`
     }
 `;
 
-export const Body = styled.body<CalculatorStyleProps>`
+export const Body = styled.div<CalculatorStyleProps>`
     background-color: ${(props)=> props.theme.mainBackground};
     min-width:100vw;
     min-height:100vh;

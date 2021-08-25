@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { CalcOperation } from '../../calcInterface';
 
 interface Props{
     backgroundColor?: string;
@@ -10,8 +9,6 @@ interface Props{
 }
 
 const getButtonMargin = (value:string | undefined):string => {
-    console.log(value);
-
     switch (value){
         case "reset":
             return "0px 10px 0px 0px";
@@ -54,6 +51,10 @@ export const KeyButton = styled.div<Props>`
     margin:${(props)=> getButtonMargin(props.keyValue)};
     box-shadow: 0px -4px 5px inset ${(props)=> props.shadowColor};
     cursor: pointer;
+    
+    :hover{
+        filter: opacity(80%);
+    }
 `;
 
 export const KeyButtonText = styled.p<Props>`

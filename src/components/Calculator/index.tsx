@@ -42,15 +42,32 @@ export const Calculator = () => {
                     newValue = calcValue.slice(0,-1);
                     setCalcValue(newValue);
                 }
+                
                 break;
             case CalcOperation.reset:
                 newValue = "";
                 setCalcValue(newValue);
                 break;
             case CalcOperation.equal:
-                newValue = eval(calcValue);
+                if (calcValue.length<1) break;
+
+                newValue=calcValue;
+
+                for (let i=(newValue.length-1);i>0;i--){
+                    
+                    let lastChar=newValue.charAt(i);
+
+                    if (lastChar=="-" || lastChar=="+" || lastChar=="/" || lastChar=="*"){
+                        newValue = newValue.slice(0,-1);
+                    }else{
+                        break;
+                    }
+                }
+                
+                newValue = eval(newValue).toString();
                 setCalcValue(newValue);
                 break;
+
             default:
                 setCalcValue(`${calcValue}${value}`);
                 break;
